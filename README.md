@@ -1,1 +1,1 @@
-# Doc-Query-AI
+# This is for Doc-Query-AI project
