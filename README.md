@@ -73,7 +73,7 @@ This command will start all the necessary services defined in the `docker-compos
 
 ### 🌐 Accessing the Application
 
-Once the services are up and running, you can interact with the News-Query-AI application through the chatbot interface. The application will be accessible on the specified ports, allowing you to request the latest news and engage with the content.
+Once the services are up and running, you can interact with the News-Query-AI application through the chatbot interface (through POSTMAN API testing platform by running the URLS). The application will be accessible on the specified ports, allowing you to request the latest news and engage with the content.
 
 ---
 
