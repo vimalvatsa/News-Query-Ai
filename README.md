@@ -37,7 +37,19 @@ git clone https://github.com/vimalvatsa/21BCE5888_ML.git
 cd 21BCE5888_ML
 ```
 
-### 2. Build and Run with Docker
+### 2. Setup Redis Server
+
+Before running the application, set up the Redis server for efficient caching:
+
+```bash
+# Pull the Redis image
+docker pull redis
+
+# Run the Redis container
+docker run --name redis-server -d -p 6379:6379 redis
+```
+
+### 3. Build and Run with Docker
 
 You can use Docker to build and run the application. Ensure you have Docker and Docker Compose installed on your system.
 
