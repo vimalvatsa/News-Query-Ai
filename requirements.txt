@@ -1,0 +1,35 @@
+django==4.2.6
+djangorestframework==3.14.0
+djangorestframework-api-key==2.3.0
+ai21==2.1.2
+langchain==0.0.312
+boto3==1.28.62
+pymilvus==2.3.1
+unstructured==0.10.20
+unstructured[pdf]
+unstructured[docx]
+sentence-transformers==2.2.2
+huggingface-hub==0.18.0
+psycopg2==2.9.5
+django-allow-cidr==0.5.0
+celery==5.3.4
+redis==5.0.1
+openai==0.28.1
+tiktoken==0.6.0
+langchain-ai21==0.1.2
+anthropic==0.23.1
+# onnxruntime>=1.17.0  # Updated to include available versions
+
+##
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
