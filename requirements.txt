@@ -10,7 +10,7 @@ unstructured[pdf]
 unstructured[docx]
 sentence-transformers==2.2.2
 huggingface-hub==0.18.0
-psycopg2==2.9.5
+psycopg2-binary==2.9.5
 django-allow-cidr==0.5.0
 celery==5.3.4
 redis==5.0.1
@@ -21,15 +21,14 @@ anthropic==0.23.1
 # onnxruntime>=1.17.0  # Updated to include available versions
 
 ##
-FROM python:3.9
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# COPY . .
 
-EXPOSE 8000
+# EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
