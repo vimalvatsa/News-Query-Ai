@@ -17,8 +17,8 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
         
-    from Application.tasks import start_news_scraper
-    start_news_scraper() 
+    # from Application.tasks import start_news_scraper
+    # start_news_scraper() 
     execute_from_command_line(sys.argv)
 
 

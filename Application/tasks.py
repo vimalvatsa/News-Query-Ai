@@ -2,8 +2,8 @@ import threading
 import time
 import requests
 from bs4 import BeautifulSoup
-import django
-django.setup()  # Ensure Django is set up before importing model
+# import django
+# django.setup()  # Ensure Django is set up before importing model
 
 from VectorDB.VectorDB import vector_db
 
@@ -28,7 +28,7 @@ def scrape_news():
                 #adding to vector database
                 vector_db.add_document(doc.documentName, doc.doc_key, summary)
         
-        time.sleep(60) #scrape every 60 seconds
+        time.sleep(3600) #scrape every 1hr
         
 def start_news_scraper():
     try:

@@ -51,7 +51,7 @@ class DocChatClass(APIView):
             return Response({"Message": "Too many requests"}, status=429)
         
         data_main = {
-            "document_id": data.pop("documentID", None),
+            # "document_id": data.pop("documentID", None),
             "query": data.pop("query", None),
             "type_of_search": data.pop("type_of_search", TypeOfSearch.default),
             "top_k": int(data.get("top_k", 10)),
@@ -60,15 +60,15 @@ class DocChatClass(APIView):
         header = request.headers.get("Org")
         serializer = DocChatSerializers(data=data_main)
         if serializer.is_valid():
-            document_id = serializer.validated_data["document_id"]
+            # document_id = serializer.validated_data["document_id"]
             query = serializer.validated_data["query"]
             type_of_search = serializer.validated_data["type_of_search"]
             top_k = serializer.validated_data["top_k"]
             threshold = serializer.validated_data["threshold"]
             collection_name = create_collection_name(header, type_of_search, user_id)
-            document_exists = vector_db.check_file_existence(
-                document_id, collection_name, type_of_search
-            )
+            # document_exists = vector_db.check_file_existence(
+            #     document_id, collection_name, type_of_search
+            # )
             pattern = r'heading - (.*?) accurately'
             matches = re.search(pattern, query, re.IGNORECASE)
             if matches:
@@ -269,9 +269,9 @@ class DocChatClass(APIView):
             #     data={"Message": flatten_serializer_errors(serializer.errors)},
             # )
     
-    def generate_cache_key(self, query, document_id, top_k, threshold):
+    def generate_cache_key(self, query, top_k, threshold):
         # Create a unique cache key based on the search parameters
-        key_parts = f"{query}:{document_id}:{top_k}:{threshold}"
+        key_parts = f"{query}:{top_k}:{threshold}"
         return f"chat_results:{hashlib.md5(key_parts.encode()).hexdigest()}"
     
     def process_content(self, text):
