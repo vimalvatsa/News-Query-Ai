@@ -3,6 +3,7 @@ ENV PYTHONUBUFFERED=1
 WORKDIR /code
 COPY requirements.txt ./
 
+RUN apt-get update && apt-get install -y build-essential
 RUN pip3 install -r requirements.txt 
 
 # Install Redis
