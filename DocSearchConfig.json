@@ -1,0 +1,15 @@
+{
+    "Demo_config":{
+        "vectordb_provider":"Milvus",
+        "embeddings_provider":"OpenAI",
+        "llm_provider":"OpenAI",
+        "api_key":"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"
+    },
+    "Default_config":{
+        "vectordb_provider":"Milvus",
+        "embeddings_provider":"HuggingFace",
+        "llm_provider":"Anthropic",
+        "api_key":"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"
+    },
+    "Demo":true
+}
