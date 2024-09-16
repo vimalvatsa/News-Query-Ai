@@ -1,0 +1,10 @@
+
+1. for url - http://127.0.0.1:8000/doc_search/search (POST)
+{
+    "top_k" : 10,
+    "query": "Give me the top 10 latest news under heading - Sports accurately"
+}
+
+
+2. url - http://127.0.0.1:8000/doc_search/health (GET)
+
