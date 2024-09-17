@@ -162,3 +162,4 @@ cython_debug/
 volumes
 Reports
 .DS_Store
+DocSearchConfig.json
