@@ -79,3 +79,4 @@ Once the services are up and running, you can interact with the News-Query-AI ap
 
 Stay informed and engaged with **News-Query-AI**, where the latest news is just a chat away! 📰✨
 
+![News AI](NEWS-AI.jpg)
